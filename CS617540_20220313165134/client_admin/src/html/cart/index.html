@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<%include('.. /common/head.html')%>
+		<title></title>
+</head>
+
+<body>
+	<div id="page_cart">
+		<div class="warp">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="cart_list">
+							{{list[0]}}
+							{{each list o idx}}
+							<div class="cart_card flex">
+								<figure class="col-4 float-left">
+									<img src="{{o.img}}" />
+								</figure>
+								<h5>
+									{{o.title}}
+								</h5>
+								<span>
+									现价{{o.price}}
+								</span>
+								<span>
+									原价<del>{{o.price_ago}}</del>
+								</span>
+							</div>
+							{{/each}}
+						</div>
+					</div>
+					<div class="col">
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

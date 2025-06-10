@@ -1,0 +1,61 @@
+<div class="warp goods">
+	<div class="container">
+		<div class="row">
+			{{each list as o idx}}
+			<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+
+				<figure class="equal">
+					<a href="{{o.url}}">
+						<img src="{{o.img}}" alt="Image">
+					</a>
+					<figcaption class="card-body text-dark">
+						<a href="{{o.url}}">
+							<h6 class="title">{{o.title}}</h6>
+						</a>
+						<div class="float-left float-lg-none float-xl-left">
+							<span class="price">￥{{o.price}}</span>
+							<small>￥<del>{{o.price_ago}}</del></small>
+						</div>
+						<div class="float-right float-lg-none float-xl-right">
+							<span>总销量：{{o.sales}}</span>
+						</div>
+					</figcaption>
+				</figure>
+			</div>
+			{{/each}}
+		</div>
+	</div>
+</div>
+<style>
+	.goods figure img {
+		height: 200px;
+	}
+
+	.goods figure .title {
+		width: 100%;
+		max-height: 2rem;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.goods figure {
+		width: 100%;
+		margin: 0;
+		position: relative;
+	}
+
+	.goods figure figcaption {
+		padding-top: 0.25rem;
+		padding-bottom: 0.25rem;
+		margin: 0 !important;
+	}
+
+	.goods figcaption .price {
+		font-weight: 900;
+	}
+
+	.goods figure figcaption > * {
+		padding: 0 auto;
+	}
+</style>
